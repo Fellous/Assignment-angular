@@ -1,0 +1,40 @@
+<div class="item-list-container">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Find by name...">
+    <button (click)="toggleView()">Toggle View</button>
+    <button (click)="navigateToCreate()">Create New</button>
+  
+    <div *ngIf="isTableView; else cardView">
+      <table>
+        <thead>
+          <tr>
+            <th>Color</th>
+            <th>Name</th>
+            <th>Create Date</th>
+            <th>Last Update</th>
+            <th>Created By</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of filteredItems">
+            <td><div [style.background-color]="item.color" class="color-box"></div></td>
+            <td>{{item.name}}</td>
+            <td>{{item.createDate}}</td>
+            <td>{{item.lastUpdate}}</td>
+            <td>{{item.createdBy}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <ng-template #cardView>
+      <div class="card-container">
+        <div *ngFor="let item of filteredItems" class="item-card">
+          <div [style.background-color]="item.color" class="color-box"></div>
+          <h3>{{item.name}}</h3>
+          <p>{{item.createDate}} - {{item.lastUpdate}}</p>
+          <p>{{item.createdBy}}</p>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  

@@ -1,0 +1,18 @@
+<div class="item-form">
+    <h2>Create New</h2>
+    <button (click)="closeForm()">Close</button>
+    <form (ngSubmit)="onSubmit()">
+      <label>Name</label>
+      <input [(ngModel)]="item.name" name="name" type="text" placeholder="Type tag name..." required />
+  
+      <label>Tag Description</label>
+      <textarea [(ngModel)]="item.description" name="description" placeholder="Type tag description..." required></textarea>
+  
+      <label>Color</label>
+      <input [(ngModel)]="item.color" name="color" type="color" />
+  
+      <div class="color-preview" [style.background-color]="item.color"></div>
+  
+      <button type="submit">Save</button>
+    </form>
+  </div>

@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "name": "Car accident",
+      "color": "#00ffcc",
+      "createDate": "03/02/2021",
+      "lastUpdate": "03/02/2021",
+      "createdBy": "Ori Lugasi"
+    },
+    {
+      "id": 2,
+      "name": "Human trafficking for prostitution",
+      "color": "#ff00ff",
+      "createDate": "26/01/2021",
+      "lastUpdate": "26/01/2021",
+      "createdBy": "Ran Shim"
+    }
+  ]
+  

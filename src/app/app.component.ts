@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'management-tool';
+  isCreating = false;
+
+  toggleCreating(value: boolean) {
+    this.isCreating = value;
+  }
+
+  addItem(newItem: { color: string, name: string, createDate: string, lastUpdate: string, createdBy: string }) {
+    console.log('New item added:', newItem);  // Assurez-vous que cela est affiché dans la console
+    this.isCreating = false;  // Fermer le formulaire après l'ajout de l'élément
+    // Ajoutez des actions supplémentaires ici, comme l'enregistrement dans une base de données.
+  }
 }
